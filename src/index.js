@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configureStore from './stores/configureStore';
 import  { addExpense } from './actions/expense';
@@ -11,15 +12,21 @@ const store = configureStore();
 
 store.dispatch(addExpense({ description: 'water bill'}));
 store.dispatch(addExpense({ description: 'gas bill'}));
-store.dispatch(setTextFilter('gas'));
+store.dispatch(setTextFilter('bill'));
 
 
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters); 
 console.log(visibleExpenses);
-// console.log(store.getState());
+console.log(store.getState());
 
-ReactDOM.render( < AppRouter />, document.getElementById('root')
+const jsx = (
+    <Provider store = {store} >
+      <AppRouter />
+    </Provider>
+)
+
+ReactDOM.render( jsx, document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
