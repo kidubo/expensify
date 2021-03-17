@@ -10,12 +10,12 @@ import reportWebVitals from './reportWebVitals';
 
 const store = configureStore();
 
-store.dispatch(addExpense({ description: 'water bill'}));
+store.dispatch(addExpense({ description: 'water bill', amount : 4500 }));
 store.dispatch(addExpense({ description: 'gas bill'}));
 store.dispatch(setTextFilter('bill'));
 
 setTimeout(()=> {
-    store.dispatch(setTextFilter('rent'));
+    store.dispatch(setTextFilter('water'));
 },3000)
 
 const state = store.getState();
