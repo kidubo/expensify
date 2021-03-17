@@ -1,9 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { setTextFilter }  from '../actions/filters';
 
-const ExpenseListFilters = () => (
+
+const ExpenseListFilters = (props) => (
     <div>
-       <input type = 'text'/>
+       <input type = 'text' 
+              value= {props.filters.text} 
+              onChange = {(e)=> {
+                    props.dispatch(setTextFilter(e.target.value))
+              } }/>
     </div>
 )
 
-export default ExpenseListFilters;
+const mapStateToProps = (state) => {
+      return{
+          filters: state.filters
+      };
+};
+
+export default connect(mapStateToProps)(ExpenseListFilters);
+
+// the goal from here is to actual get the old value off from the store 
