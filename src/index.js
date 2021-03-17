@@ -14,6 +14,10 @@ store.dispatch(addExpense({ description: 'water bill'}));
 store.dispatch(addExpense({ description: 'gas bill'}));
 store.dispatch(setTextFilter('bill'));
 
+setTimeout(()=> {
+    store.dispatch(setTextFilter('rent'));
+},3000)
+
 
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters); 
