@@ -4,19 +4,20 @@ import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configureStore from './stores/configureStore';
 import  { addExpense } from './actions/expense';
-import { setTextFilter } from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
 import reportWebVitals from './reportWebVitals';
 
 const store = configureStore();
 
-store.dispatch(addExpense({ description: 'water bill', amount : 4500 }));
-store.dispatch(addExpense({ description: 'gas bill'}));
-store.dispatch(setTextFilter('bill'));
+store.dispatch(addExpense({ description: 'Water bill', amount : 4500 }));
+store.dispatch(addExpense({ description: 'Gas bill', createdAt: 1000 }));
+store.dispatch(addExpense({ description: 'Rent', amount : 109500 }));
 
-setTimeout(()=> {
-    store.dispatch(setTextFilter('water'));
-},3000)
+// store.dispatch(setTextFilter('bill'));
+//  This was usefull when we havent set text fillter for ourself now it just hold us back
+// setTimeout(()=> {
+//     store.dispatch(setTextFilter('water'));
+// },3000)
 
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters); 
