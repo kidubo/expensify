@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ExpenseForm from './ExpenseFrom';
+import ExpenseForm from './ExpenseForm';
 import { addExpense } from '../actions/expense';
 
 const AddExpensePage = (props) => {
