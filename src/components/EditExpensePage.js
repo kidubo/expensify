@@ -12,7 +12,7 @@ const EditExpensePage = (props) => {
             props.dispatch(editExpense(props.expense.id, expense))
             props.history.push('/')
             
-            console.log('updated', expense)
+            // console.log('updated', expense)
           }}
       />   
       <button onClick={()=>{

@@ -9,9 +9,9 @@ import reportWebVitals from './reportWebVitals';
 
 const store = configureStore();
 
-store.dispatch(addExpense({ description: 'Water bill', amount : 4500 }));
-store.dispatch(addExpense({ description: 'Gas bill', createdAt: 1000 }));
-store.dispatch(addExpense({ description: 'Rent', amount : 109500 }));
+// store.dispatch(addExpense({ description: 'Water bill', amount : 4500 }));
+// store.dispatch(addExpense({ description: 'Gas bill', createdAt: 1000 }));
+// store.dispatch(addExpense({ description: 'Rent', amount : 109500 }));
 
 // store.dispatch(setTextFilter('bill'));
 //  This was usefull when we havent set text fillter for ourself now it just hold us back
@@ -21,9 +21,10 @@ store.dispatch(addExpense({ description: 'Rent', amount : 109500 }));
 
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters); 
-console.log(visibleExpenses);
+// console.log(visibleExpenses);
 // console.log(store.getState());
 
+console.log('test')
 const jsx = (
     <Provider store = {store} >
       <AppRouter />
