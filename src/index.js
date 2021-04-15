@@ -6,6 +6,7 @@ import configureStore from './stores/configureStore';
 import  { addExpense } from './actions/expense';
 import getVisibleExpenses from './selectors/expenses';
 import reportWebVitals from './reportWebVitals';
+import './firebase/firebase';
 
 const store = configureStore();
 
