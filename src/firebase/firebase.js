@@ -15,9 +15,17 @@ const firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);;
 
-    firebase.database().ref().set({
+  const database = firebase.database()
+
+    database.ref().set({
         name:'innocent leonard',
-        son:'maximilian'
+        son:'maximilian',
+        location: {
+            city: 'kampala',
+            country: 'uganda'
+        },
+
     })
 
-    // export default firebase;
+    database.ref('location/city').set('Dar es salaam')
+    database.ref('location/country').set('Tanzania')
