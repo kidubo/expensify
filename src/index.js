@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configureStore from './stores/configureStore';
-import  { addExpense } from './actions/expense';
 import getVisibleExpenses from './selectors/expenses';
 import reportWebVitals from './reportWebVitals';
 import './firebase/firebase';

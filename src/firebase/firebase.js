@@ -29,3 +29,29 @@ const firebaseConfig = {
 
     database.ref('location/city').set('Dar es salaam')
     database.ref('location/country').set('Tanzania')
+
+    database.ref('atribute').set({
+        height: '160cm',
+        weight:  '70kg'
+    }).then(()=>{
+        console.log('things worked correctly')
+    }).catch((e)=>{
+        console.log('things didin/t work correctly', e)
+    })
+
+    database.ref('son')
+        .remove(null)
+        .then(()=>{
+            console.log('done deleting')
+        })
+        .catch((e)=>{
+            console.log('Error unable to delete')
+        })
+
+    database.ref().update({
+        name:'Kidubo'
+    }).then(()=>{
+        console.log('updated')
+    }).catch((e)=>{
+        console.log('error')
+    })
