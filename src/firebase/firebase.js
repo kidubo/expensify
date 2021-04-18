@@ -66,6 +66,18 @@ const firebaseConfig = {
     //         console.log('Error cant view data', e)
     //     })
 
-    database.ref().on('value', (snapshot)=>{
+    const onValueChange = database.ref().on('value', (snapshot)=>{
         console.log(snapshot.val())
     })
+
+    setTimeout(()=>{
+        database.ref('atribute/height').set('180cm')
+    },3000);
+
+    setTimeout(()=>{
+        database.ref().off(onValueChange)
+    },7000);
+
+    setTimeout(()=>{
+         database.ref('atribute/height').set('160cm')
+    },10500);
