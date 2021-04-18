@@ -17,15 +17,67 @@ const firebaseConfig = {
 
   const database = firebase.database()
 
-    database.ref().set({
-        name:'innocent leonard',
-        son:'maximilian',
-        location: {
-            city: 'kampala',
-            country: 'uganda'
-        },
+    // database.ref().set({
+    //     name:'innocent leonard',
+    //     son:'maximilian',
+    //     location: {
+    //         city: 'kampala',
+    //         country: 'uganda'
+    //     },
 
+    // })
+
+    // database.ref('location/city').set('Dar es salaam')
+    // database.ref('location/country').set('Tanzania')
+
+    // database.ref('atribute').set({
+    //     height: '160cm',
+    //     weight:  '70kg'
+    // }).then(()=>{
+    //     console.log('things worked correctly')
+    // }).catch((e)=>{
+    //     console.log('things didin/t work correctly', e)
+    // })
+
+    // database.ref('son')
+    //     .remove(null)
+    //     .then(()=>{
+    //         console.log('done deleting')
+    //     })
+    //     .catch((e)=>{
+    //         console.log('Error unable to delete')
+    //     })
+
+    // database.ref().update({
+    //     name:'Kidubo'
+    // }).then(()=>{
+    //     console.log('updated')
+    // }).catch((e)=>{
+    //     console.log('error')
+    // })
+
+    // database.ref('location/city')
+    //     .once('value')
+    //     .then((snapshot)=>{
+    //         const val = snapshot.val()
+    //         console.log(val)
+    //     })
+    //     .catch((e)=>{
+    //         console.log('Error cant view data', e)
+    //     })
+
+    const onValueChange = database.ref().on('value', (snapshot)=>{
+        console.log(snapshot.val())
     })
 
-    database.ref('location/city').set('Dar es salaam')
-    database.ref('location/country').set('Tanzania')
+    setTimeout(()=>{
+        database.ref('atribute/height').set('180cm')
+    },3000);
+
+    setTimeout(()=>{
+        database.ref().off(onValueChange)
+    },7000);
+
+    setTimeout(()=>{
+         database.ref('atribute/height').set('160cm')
+    },10500);
