@@ -17,13 +17,9 @@ const firebaseConfig = {
 
   const database = firebase.database()
 
-    // database.ref().set({
-    //     name:'innocent leonard',
-    //     son:'maximilian',
-    //     location: {
-    //         city: 'kampala',
-    //         country: 'uganda'
-    //     },
+    // database.ref('Work').set({
+    //     job:'software developer',
+    //     company:'Cocoa codes'
 
     // })
 
@@ -66,18 +62,23 @@ const firebaseConfig = {
     //         console.log('Error cant view data', e)
     //     })
 
-    const onValueChange = database.ref().on('value', (snapshot)=>{
-        console.log(snapshot.val())
+    // const onValueChange = database.ref().on('value', (snapshot)=>{
+    //     console.log(snapshot.val())
+    // })
+
+    // setTimeout(()=>{
+    //     database.ref('atribute/height').set('180cm')
+    // },3000);
+
+    // setTimeout(()=>{
+    //     database.ref().off(onValueChange)
+    // },7000);
+
+    // setTimeout(()=>{
+    //      database.ref('atribute/height').set('160cm')
+    // },10500);
+
+    database.ref().on('value', (snapshot)=>{
+        const val = snapshot.val();
+        console.log(`${val.name} is a ${val.Work.job} at ${val.Work.company}`)
     })
-
-    setTimeout(()=>{
-        database.ref('atribute/height').set('180cm')
-    },3000);
-
-    setTimeout(()=>{
-        database.ref().off(onValueChange)
-    },7000);
-
-    setTimeout(()=>{
-         database.ref('atribute/height').set('160cm')
-    },10500);
