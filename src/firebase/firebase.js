@@ -56,12 +56,16 @@ const firebaseConfig = {
     //     console.log('error')
     // })
 
-    database.ref()
-        .once('value')
-        .then((snapshot)=>{
-            const val = snapshot.val()
-            console.log(val)
-        })
-        .catch((e)=>{
-            console.log('Error cant view data', e)
-        })
+    // database.ref('location/city')
+    //     .once('value')
+    //     .then((snapshot)=>{
+    //         const val = snapshot.val()
+    //         console.log(val)
+    //     })
+    //     .catch((e)=>{
+    //         console.log('Error cant view data', e)
+    //     })
+
+    database.ref().on('value', (snapshot)=>{
+        console.log(snapshot.val())
+    })
