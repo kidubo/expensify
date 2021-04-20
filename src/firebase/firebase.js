@@ -17,6 +17,11 @@ const firebaseConfig = {
 
   const database = firebase.database()
 
+  database.ref('notes').push({
+    description:'Rent',
+    amount:230,
+  })
+
     // database.ref('Work').set({
     //     job:'software developer',
     //     company:'Cocoa codes'
@@ -78,7 +83,9 @@ const firebaseConfig = {
     //      database.ref('atribute/height').set('160cm')
     // },10500);
 
-    database.ref().on('value', (snapshot)=>{
-        const val = snapshot.val();
-        console.log(`${val.name} is a ${val.Work.job} at ${val.Work.company}`)
-    })
+    // database.ref().on('value', (snapshot)=>{
+    //     const val = snapshot.val();
+    //     console.log(`${val.name} is a ${val.Work.job} at ${val.Work.company}`)
+    // })
+
+    
