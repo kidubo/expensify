@@ -17,10 +17,30 @@ const firebaseConfig = {
 
   const database = firebase.database()
 
-  database.ref('notes').push({
-    description:'Rent',
-    amount:230,
+  database.ref('expenses').push({
+    description: "phone",
+    amount: 250,
+    note:"",
+    createdAt:0
   })
+
+ database.ref('expenses').push({
+    description: "rent",
+    amount: 550,
+    note:"",
+    createdAt:0
+  })
+
+ database.ref('expenses').push({
+    description: "water",
+    amount: 50,
+    note:"",
+    createdAt:0
+  })
+  // database.ref('notes').push({
+  //   description:'Rent',
+  //   amount:230,
+  // })
 
     // database.ref('Work').set({
     //     job:'software developer',
