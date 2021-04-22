@@ -19,6 +19,8 @@ const firebaseConfig = {
 
   export { firebase, database as default};
 
+  
+
 //child_added
 //    database.ref('expenses').on('child_added', (snapshot)=>{
 //     console.log(snapshot.key, snapshot.val())
