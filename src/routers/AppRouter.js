@@ -6,7 +6,8 @@ import Help from '../components/Help';
 import Header from '../components/Header';
 import NotFound from '../components/NotFound';
 import { BrowserRouter, Route , Switch,} from 'react-router-dom';
-import { LoginPage} from '../components/LoginPage'
+import  LoginPage from '../components/LoginPage'
+
 
 const AppRouter = () => {
     return (   

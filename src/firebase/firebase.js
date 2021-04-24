@@ -16,8 +16,19 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);;
 
   const database = firebase.database()
+  const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
 
-  export { firebase, database as default};
+  export { firebase, googleAuthProvider, database as default};
+  
+  
+
+    // FIREBASE_API_KEY: AIzaSyBVwnOoSCb05LOx3n3ECdfg39T-ygFV4RQ
+    // FIREBASE_AUTH_DOMAIN: expensify02-5ad15.firebaseapp.com
+    // FIREBASE_DATABASE_URL: https://expensify02-5ad15-default-rtdb.firebaseio.com
+    // FIREBASE_PROJECT_ID: expensify02-5ad15
+    // FIREBASE_STORAGE_BUCKET: expensify02-5ad15.appspot.com
+    // FIREBASE_MASSEGING_SENDER_ID: 333394882632
+
 
   
 
