@@ -6,7 +6,8 @@ import { startSetExpenses } from './actions/expense';
 import configureStore from './stores/configureStore';
 import getVisibleExpenses from './selectors/expenses';
 import reportWebVitals from './reportWebVitals';
-import './firebase/firebase';
+import { firebase } from './firebase/firebase';
+
 
 const store = configureStore();
 
@@ -37,6 +38,15 @@ ReactDOM.render(<p> Loading... </p>, document.getElementById('root'));
 store.dispatch(startSetExpenses()).then(()=>{
   ReactDOM.render( jsx, document.getElementById('root'));
 })
+
+
+firebase.auth().onAuthStateChanged((user)=>{
+    if(user){
+        console.log('User login')
+    }else {
+        console.log('user logout')
+    }
+});
 
 
 // If you want to start measuring performance in your app, pass a function
