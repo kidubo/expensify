@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import AppRouter, { history } from './routers/AppRouter';
+import AppRouter from './routers/AppRouter';
 import { startSetExpenses } from './actions/expense';
 import configureStore from './stores/configureStore';
 import getVisibleExpenses from './selectors/expenses';
 import reportWebVitals from './reportWebVitals';
 import { firebase } from './firebase/firebase';
-
 
 
 const store = configureStore();
@@ -45,7 +44,7 @@ firebase.auth().onAuthStateChanged((user)=>{
     if(user){
         console.log('User login')
     }else {
-      history.push('/')
+        console.log('User logout')
     }
 });
 
