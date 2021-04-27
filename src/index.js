@@ -45,7 +45,8 @@ firebase.auth().onAuthStateChanged((user)=>{
     if(user){
         console.log('User login')
     }else {
-      history.push('/')
+      console.log('logout')
+      history.push("/")
     }
 });
 
