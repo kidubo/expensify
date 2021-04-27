@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import AppRouter from './routers/AppRouter';
+import AppRouter, { history } from './routers/AppRouter';
 import { startSetExpenses } from './actions/expense';
 import configureStore from './stores/configureStore';
 import getVisibleExpenses from './selectors/expenses';
 import reportWebVitals from './reportWebVitals';
 import { firebase } from './firebase/firebase';
-import { history } from './routers/AppRouter';
+// import { history } from './routers/AppRouter';
 
 
 const store = configureStore();
