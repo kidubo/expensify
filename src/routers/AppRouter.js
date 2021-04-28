@@ -1,7 +1,6 @@
 import React from 'react';
 import AddExpensePage from '../components/AddExpensePage';
 import EditExpense from '../components/EditExpensePage';
-// import ExpenseDashboard from '../components/ExpenseDashboard';
 import ExpenseDashboard from '../components/ExpenseDashboard';
 import Help from '../components/Help';
 import Header from '../components/Header';
