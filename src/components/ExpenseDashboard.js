@@ -13,4 +13,4 @@ const ExpenseDashboard = () => {
     );
 }
 
-export default ExpenseDashboard
+export default ExpenseDashboard;
