@@ -33,31 +33,42 @@ const jsx = (
     </Provider>
 )
 
-let hasRendered = false;
-const renderApp = () => {
-  if(!hasRendered){
-    ReactDOM.render( jsx, document.getElementById('root'));
-    hasRendered = true;
+// let hasRendered = false;
+// const renderApp = () => {
+//   if(!hasRendered){
+//     ReactDOM.render( jsx, document.getElementById('root'));
+//     hasRendered = true;
 
-  }
-}
+//   }
+// }
 
 ReactDOM.render(<p> Loading... </p>, document.getElementById('root'));
+
+ store.dispatch(startSetExpenses()).then(()=>{
+   ReactDOM.render( jsx, document.getElementById('root'));
+ })
 
 
 
 
 firebase.auth().onAuthStateChanged((user)=>{
     if(user){
-      store.dispatch(startSetExpenses()).then(()=>{
-        renderApp();
-        if(history.location.pathname === '/'){
-          history.push('/dashboard')
-        }
-    })
+      // store.dispatch(startSetExpenses()).then(()=>{
+      //   renderApp();
+      //   if(history.location.pathname === '/'){
+      //     history.push('/dashboard')
+      
+    //   console.log('login')
+    //     }
+    // })
+
+    console.log('login')
+
     }else {
-      renderApp();
-      history.push("/")
+
+      console.log('logout')
+      // renderApp();
+      // history.push("/")
     }
 });
 
