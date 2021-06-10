@@ -5,8 +5,8 @@ import ExpenseDashboard from '../components/ExpenseDashboard';
 import Help from '../components/Help';
 import Header from '../components/Header';
 import NotFound from '../components/NotFound';
-import { BrowserRouter as Router ,Route , Switch,} from 'react-router-dom';
 import { createBrowserHistory } from 'history';
+import { BrowserRouter as Router ,Route , Switch,} from 'react-router-dom';
 import  LoginPage from '../components/LoginPage';
 
 export const history = createBrowserHistory();

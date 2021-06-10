@@ -33,14 +33,15 @@ const jsx = (
     </Provider>
 )
 
-// let hasRendered = false;
-// const renderApp = () => {
-//   if(!hasRendered){
-//     ReactDOM.render( jsx, document.getElementById('root'));
-//     hasRendered = true;
+let hasRendered = false;
+const renderApp = () => {
+  if(!hasRendered){
+    ReactDOM.render( jsx, document.getElementById('root'));
+    hasRendered = true;
 
-//   }
-// }
+  }
+}
+
 
 ReactDOM.render(<p> Loading... </p>, document.getElementById('root'));
 
@@ -53,22 +54,16 @@ ReactDOM.render(<p> Loading... </p>, document.getElementById('root'));
 
 firebase.auth().onAuthStateChanged((user)=>{
     if(user){
-      // store.dispatch(startSetExpenses()).then(()=>{
-      //   renderApp();
-      //   if(history.location.pathname === '/'){
-      //     history.push('/dashboard')
-      
-    //   console.log('login')
-    //     }
-    // })
-
-    console.log('login')
+      store.dispatch(startSetExpenses()).then(()=>{
+        renderApp();
+        if(history.location.pathname === '/'){
+          history.push('/dashboard')      
+        }
+    })
 
     }else {
-
-      console.log('logout')
-      // renderApp();
-      // history.push("/")
+      renderApp();
+      history.push("/")
     }
 });
 
