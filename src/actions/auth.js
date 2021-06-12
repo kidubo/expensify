@@ -1,7 +1,6 @@
-import firebase from '@firebase/app';
-import { googleAuthProvider, auth } from "../firebase/firebase";
+import { googleAuthProvider, auth} from "../firebase/firebase";
 
-export const login = ({uid}) => ({
+export const login = (uid) => ({
         type: "LOGIN",
         uid
 });

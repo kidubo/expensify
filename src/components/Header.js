@@ -10,10 +10,9 @@ const Header = ( { startLogout }) => {
         <header>
             <h1>Expensify</h1>
             <div className = "nav">
-                <NavLink to = "/dashboard" activeClassName="selected" exact = {true}>Dashboard</NavLink>
-                <NavLink to = "/create" activeClassName="selected">Create Expense</NavLink>
-                 <NavLink to = "/help" activeClassName="selected">Help</NavLink>
-                 <button onClick= { startLogout }>Logout</button>
+                <NavLink to = "/dashboard" activeClassName="is-active">Dashboard</NavLink>
+                <NavLink to = "/create" activeClassName="is-active">Create Expense</NavLink>
+                <button onClick= { startLogout }>Logout</button>
             </div>
         </header>
         </div>
