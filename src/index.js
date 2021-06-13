@@ -7,7 +7,9 @@ import { login , logout } from './actions/auth';
 import configureStore from './stores/configureStore';
 import getVisibleExpenses from './selectors/expenses';
 import reportWebVitals from './reportWebVitals';
+import './styles/styles.scss';
 import { firebase } from './firebase/firebase';
+import LoadingPage from './components/LoadingPage';
 
 
 const store = configureStore();
@@ -44,7 +46,7 @@ const renderApp = () => {
 }
 
 
-ReactDOM.render(<p> Loading... </p>, document.getElementById('root'));
+ReactDOM.render(<LoadingPage />, document.getElementById('root'));
 
  store.dispatch(startSetExpenses()).then(()=>{
    ReactDOM.render( jsx, document.getElementById('root'));
