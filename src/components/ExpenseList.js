@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom';
 import ExpenseListItem from './ExpenseListItem'
 import getVisibleExpenses from '../selectors/expenses'
 
@@ -24,6 +25,9 @@ const ExpenseList = (props) => (
                     )
                 }
           </div>
+          <footer style={{marginTop: "8rem", textAlign: "center"}}>
+                <p >craeted by <a style={{ textDecoration: "none" , color:"#666"}} href="https://www.linkedin.com/in/innocent-leonard-b42179131/">Innocent L Kidubo</a> </p>
+          </footer>
         </div>
 );
 
