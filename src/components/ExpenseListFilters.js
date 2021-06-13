@@ -24,15 +24,23 @@ class ExpenseListFilters extends React.Component {
     
     render(){
         return(
-                <div>
-                   <input type = 'text' 
-                          value= {this.props.filters.text} 
-                          onChange = {(e)=> {
-                                this.props.dispatch(setTextFilter(e.target.value))
-                          } }
-                    />
-                    <select 
+                <div className="content-container">
+                   <div className="input-group">
+                   <div className="input-group__item">                   
+                        <input 
+                        type = 'text' 
+                        className="text_input"
+                        placeholder="Search expenses"
+                        value= {this.props.filters.text} 
+                        onChange = {(e)=> {
+                              this.props.dispatch(setTextFilter(e.target.value))
+                        } }
+                        />
+                  </div>
+                  <div className="input-group__item">                    
+                       <select 
                         value = {this.props.filters.sortBy}
+                        className="select"
                         onChange = {(e)=>{
                             if(e.target.valuey === "date"){
                                 this.props.dispatch(sortByDate())
@@ -40,13 +48,13 @@ class ExpenseListFilters extends React.Component {
                                 this.props.dispatch(sortByAmount())
                             }
                         }}
-                    >
+                        >
                         <option value = "date">Date</option>
                         <option value = "amount">Amount</option>
-                    </select>
-
-                    <DateRangePicker
-
+                       </select>
+                  </div>
+                  <div className="input-group__item">                  
+                        <DateRangePicker
                         startDate={this.props.filters.startDate} // momentPropTypes.momentObj or null,
                         endDate={this.props.filters.endDate} // momentPropTypes.momentObj or null,
                         onDatesChange={ this.onDatesChange }         // {({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
@@ -55,9 +63,9 @@ class ExpenseListFilters extends React.Component {
                         showClearDates={true}
                         numberOfMonths= {1}
                         isOutsideRange = {() => false }
-
-                    />
-
+                        />
+                  </div>
+                  </div>
                 </div>
             )
     }
