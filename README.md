@@ -1,4 +1,5 @@
 # Expensify
+web app that help you to manage your expenses..
 
 <img src="./readMe.png">
 
