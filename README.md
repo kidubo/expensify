@@ -1,10 +1,13 @@
 # Expensify
+---
 
 > web app that help you to manage your expenses..
 > 
 ---
 
-<img src="./readMe.png">
+> <img src="./readMe.png">
+
+---
 
 ## Table of contents
 * [General info](#general-info)
