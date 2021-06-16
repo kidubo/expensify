@@ -16,6 +16,7 @@ Project is created with:
 * redux-thunk
 * babel, webpack
 * Scss
+* Firebase Auth
 	
 ## Setup
 There is no setup to use this webApp just login with you google account and take control of your expenses
