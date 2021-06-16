@@ -1,6 +1,6 @@
 # Expensify
 
-![Image](http://url/a.png)	
+<img src="./readMe.png">
 
 ## Table of contents
 * [General info](#general-info)
